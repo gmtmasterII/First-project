@@ -68,7 +68,7 @@ public class Pizza {
                     return "you MW_oven pepperoni pizza" + price;
                 }
                 else if (discount > 0) {
-                    return price = (price*discount)/100;
+                    return price = (price*discount)/100; //вот тут тупняк
                  }
 
             }
