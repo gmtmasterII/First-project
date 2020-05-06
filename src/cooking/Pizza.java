@@ -6,8 +6,9 @@ public class Pizza {
     String name;
     ArrayList<String> ingredients = new ArrayList();
     int duration;
-    int price;
+    float price;
     CookingMethod howToCook = CookingMethod.OVEN;
+    float discount;
 
     void setName(String n) {
         name = n;
@@ -41,34 +42,52 @@ public class Pizza {
         price = p;
     }
 
-    int getPrice() {
+    float getPrice() {
         return price;
     }
 
-    String cookMeal() {
-        if (ingredients.contains("Mozarella") && ingredients.contains("Flour") && ingredients.contains("Barm") && ingredients.contains("Pepperoni sausage")) {
-            if (howToCook == CookingMethod.OVEN) {
-                return "Pepperoni oven " + price;
-            } else if (howToCook == CookingMethod.FRYING_PAN) {
-              price = price + 2;
-                return "Pepperoni frying pan " + price;
-            } else if (howToCook == CookingMethod.MW_OVEN) {
-                price = price / 2;
-                return "you MW_oven pepperoni pizza" + price;
-            }
+    void setDiscount(float d) {
+        discount = d;
+    }
 
+    float getDiscount() {
+        return  discount;
+    }
+
+
+    String cookMeal() {
+        if (ingredients.contains("Flour") && ingredients.contains("Barm")) {
+            if (ingredients.contains("Mozarella") && ingredients.contains("Pepperoni sausage")) {
+                if (howToCook == CookingMethod.OVEN) {
+                    return "Pepperoni oven " + price;
+                } else if (howToCook == CookingMethod.FRYING_PAN) {
+                    price = price + 2;
+                    return "Pepperoni frying pan " + price;
+                } else if (howToCook == CookingMethod.MW_OVEN) {
+                    price = price / 2;
+                    return "you MW_oven pepperoni pizza" + price;
+                }
+                else if (discount > 0) {
+                    return price = (price*discount)/100;
+                 }
+
+            }
         }
 
-        if (ingredients.contains("Flour") && ingredients.contains("Barm") && ingredients.contains("Cheese") && ingredients.contains("Tomato")) {
-            if (howToCook == CookingMethod.OVEN) {
-                return "Margarita oven";
-            } else if (howToCook == CookingMethod.FRYING_PAN) {
-                return "Margarita frying pan";
-            } else if (howToCook == CookingMethod.MW_OVEN) {
-                price = price / 2;
-                return "you MW_oven margarita pizza price is " +  price;
+        if (ingredients.contains("Flour") && ingredients.contains("Barm")) {
+            if (ingredients.contains("Cheese") && ingredients.contains("Tomato")) {
+                if (howToCook == CookingMethod.OVEN) {
+                    return "Margarita oven";
+                } else if (howToCook == CookingMethod.FRYING_PAN) {
+                    return "Margarita frying pan";
+                } else if (howToCook == CookingMethod.MW_OVEN) {
+                    price = price / 2;
+                    return "you MW_oven margarita pizza price is " + price;
+                }
             }
+
         }
         return "unknown pizza";
     }
+
 }
