@@ -60,17 +60,22 @@ public class Pizza {
             if (ingredients.contains("Mozarella") && ingredients.contains("Pepperoni sausage")) {
                 if (howToCook == CookingMethod.OVEN) {
                     return "Pepperoni oven " + price;
-                } else if (howToCook == CookingMethod.FRYING_PAN) {
-                    price = price + 2;
-                    return "Pepperoni frying pan " + price;
-                } else if (howToCook == CookingMethod.MW_OVEN) {
-                    price = price / 2;
-                    return "you MW_oven pepperoni pizza" + price;
                 }
-                else if (discount > 0) {
-                    price = (price*discount)/100;
-                    return price;
-                 }
+                if (discount>0) {
+                    price = (price-2);
+                    return "Discounted price is " + price;
+                }
+                    else if (howToCook == CookingMethod.FRYING_PAN) {
+                        price = price + 2;
+                        return "Pepperoni frying pan " + price;
+                    } else if (howToCook == CookingMethod.MW_OVEN) {
+                        price = price / 2;
+                        return "you MW_oven pepperoni pizza" + price;
+                    }
+                    else if (discount > 0) {
+                        price = (price-2);
+                        return "Discounted price is " + price;
+                     }
 
             }
         }
@@ -79,13 +84,19 @@ public class Pizza {
             if (ingredients.contains("Cheese") && ingredients.contains("Tomato")) {
                 if (howToCook == CookingMethod.OVEN) {
                     return "Margarita oven";
-                } else if (howToCook == CookingMethod.FRYING_PAN) {
-                    return "Margarita frying pan";
-                } else if (howToCook == CookingMethod.MW_OVEN) {
-                    price = price / 2;
-                    return "you MW_oven margarita pizza price is " + price;
                 }
-            }
+                    if (discount>0) {
+                        price = (price-2);
+                        return "Discounted price is " + price;
+                    }
+                    else if (howToCook == CookingMethod.FRYING_PAN) {
+                        return "Margarita frying pan";
+                    } else if (howToCook == CookingMethod.MW_OVEN) {
+                        price = price / 2;
+                        return "you MW_oven margarita pizza price is " + price;
+                    }
+
+                }
 
         }
         return "unknown pizza";
