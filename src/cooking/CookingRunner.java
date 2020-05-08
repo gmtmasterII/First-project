@@ -7,9 +7,7 @@ public class CookingRunner {
         pepperoni.setDuration(1);
         pepperoni.setFryingPanMethod();
         pepperoni.setPrice(10);
-        pepperoni.setDiscount(30);
-
-        System.out.println(pepperoni.getDiscount());
+       // pepperoni.setDiscount(10);
 
         Ingredients flour = new Ingredients(); //мука
         flour.setName("Flour");
@@ -36,7 +34,7 @@ public class CookingRunner {
 
         Pizza margarita = new Pizza();
         margarita.setPrice(6);
-        margarita.setCookingMethod(CookingMethod.MW_OVEN);
+        margarita.setDiscount();
 
         Ingredients cheese = new Ingredients();
         cheese.setName("Cheese");

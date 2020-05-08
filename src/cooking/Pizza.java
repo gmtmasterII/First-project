@@ -8,7 +8,8 @@ public class Pizza {
     int duration;
     float price;
     CookingMethod howToCook = CookingMethod.OVEN;
-    float discount;
+    float discount = 2;
+    boolean applyDiscount;
 
     void setName(String n) {
         name = n;
@@ -46,8 +47,8 @@ public class Pizza {
         return price;
     }
 
-    void setDiscount(float d) {
-        discount = d;
+    void setDiscount() {
+        applyDiscount = true;
     }
 
     float getDiscount() {
@@ -61,8 +62,8 @@ public class Pizza {
                 if (howToCook == CookingMethod.OVEN) {
                     return "Pepperoni oven " + price;
                 }
-                if (discount>0) {
-                    price = (price-2);
+                if (applyDiscount) {
+                    price = price-discount;
                     return "Discounted price for pepperoni is " + price;
                 }
                     else if (howToCook == CookingMethod.FRYING_PAN) {
@@ -82,8 +83,8 @@ public class Pizza {
                 if (howToCook == CookingMethod.OVEN) {
                     return "Margarita oven";
                 }
-                    if (discount>0) {
-                        price = (price-2);
+                    if (applyDiscount) {
+                        price = (price-discount);
                         return "Discounted price for Margarita is " + price;
                     }
                     else if (howToCook == CookingMethod.FRYING_PAN) {
