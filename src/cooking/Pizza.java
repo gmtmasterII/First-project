@@ -63,7 +63,7 @@ public class Pizza {
                 }
                 if (discount>0) {
                     price = (price-2);
-                    return "Discounted price is " + price;
+                    return "Discounted price for pepperoni is " + price;
                 }
                     else if (howToCook == CookingMethod.FRYING_PAN) {
                         price = price + 2;
@@ -72,13 +72,10 @@ public class Pizza {
                         price = price / 2;
                         return "you MW_oven pepperoni pizza" + price;
                     }
-                    else if (discount > 0) {
-                        price = (price-2);
-                        return "Discounted price is " + price;
-                     }
+                      }
 
             }
-        }
+
 
         if (ingredients.contains("Flour") && ingredients.contains("Barm")) {
             if (ingredients.contains("Cheese") && ingredients.contains("Tomato")) {
@@ -87,7 +84,7 @@ public class Pizza {
                 }
                     if (discount>0) {
                         price = (price-2);
-                        return "Discounted price is " + price;
+                        return "Discounted price for Margarita is " + price;
                     }
                     else if (howToCook == CookingMethod.FRYING_PAN) {
                         return "Margarita frying pan";
