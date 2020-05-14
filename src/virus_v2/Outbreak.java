@@ -22,14 +22,17 @@ public class Outbreak {
         return "There are " + listOfViruses.size() + " viruses in the country";
     }
     //в этом методе необходимо реализовать вывод списка всех вирусов (аналогично RunnerCheckFor). Метод вызывается наряду с getInfo.
+    //вывести способность вируса заражаться кол-во людей за 1 месяц;
     String getAddInfo() {
         String summary = "";
+        int abilityToInfect = 0;
         for(Virus aVirusFromTheList: listOfViruses) {
-            System.out.println(aVirusFromTheList.getName());
-        }
-        return summary;
-    }
+            summary = summary + "\n" + "Virus name: " + aVirusFromTheList.getName() + "; ";
 
+            abilityToInfect = abilityToInfect + aVirusFromTheList.getAbilityInfectPerMonth();
+        }
+        return summary + "\n" + abilityToInfect;
+    }
 
 
 }
