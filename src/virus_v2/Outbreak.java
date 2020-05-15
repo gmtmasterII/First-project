@@ -31,7 +31,7 @@ public class Outbreak {
 
             abilityToInfect = abilityToInfect + aVirusFromTheList.getAbilityInfectPerMonth();
         }
-        return summary + "\n" + abilityToInfect;
+        return summary + "\n" + "Total infected cases per month: " + abilityToInfect;
     }
 
 
