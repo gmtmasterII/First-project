@@ -21,8 +21,7 @@ public class Outbreak {
     String getInfo() {
         return "There are " + listOfViruses.size() + " viruses in the country";
     }
-    //в этом методе необходимо реализовать вывод списка всех вирусов (аналогично RunnerCheckFor). Метод вызывается наряду с getInfo.
-    //вывести способность вируса заражаться кол-во людей за 1 месяц;
+
     String getAddInfo() {
         String summary = "";
         int abilityToInfect = 0;

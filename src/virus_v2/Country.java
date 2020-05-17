@@ -2,6 +2,7 @@ package virus_v2;
 
 import kz.test.sanzhar.SimpleRunner;
 
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 
 public class Country {
@@ -22,13 +23,17 @@ public class Country {
 
     String getOutbreakInfo() {
         String outbreaks = " ";
-        for (Outbreak n: listOfOutbreaks){
-            outbreaks = outbreaks + n.getName() + ", ";
-        }
-            return "Country name " + name + "\n" +
-                    listOfOutbreaks.size() + " outbreaks has been detected." + "\n" +
-                        "Name of outbreaks: " + outbreaks;
-    }
+        String outbreakViruses = "";
 
+        for (Outbreak n : listOfOutbreaks) {
+            outbreaks = outbreaks + n.getName() + n.getAddInfo() + ", ";
+        }
+        return "Country name " + name + "\n" +
+                listOfOutbreaks.size() + " outbreaks has been detected." + "\n" +
+                "Name of outbreaks: " + outbreaks;
+
+
+
+    }
 
 }
