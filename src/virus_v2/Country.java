@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class Country {
     String name;
     ArrayList<Outbreak> listOfOutbreaks = new ArrayList();
+    ArrayList<Virus> listOfViruses2 = new ArrayList();
+
 
     void setName(String n) {
         name = n;
@@ -30,10 +32,21 @@ public class Country {
         }
         return "Country name " + name + "\n" +
                 listOfOutbreaks.size() + " outbreaks has been detected." + "\n" +
-                "Name of outbreaks: " + outbreaks;
+                "Name of outbreak: " + outbreaks;
 
+    }
 
+    String getOutbreakInfo2() {
+        String consolidatedOutbreakInfo = "";
+        String consolidatedVirusInfo = "";
 
+        for(Outbreak outbreak: listOfOutbreaks) {
+          for(Virus virus: outbreak.listOfViruses) {
+              consolidatedVirusInfo = consolidatedVirusInfo + "\n" + virus.getName();
+            }
+            consolidatedOutbreakInfo = consolidatedOutbreakInfo + "\n >>" + outbreak.getName() + "\n" + consolidatedVirusInfo;
+        }
+        return consolidatedOutbreakInfo;
     }
 
 }

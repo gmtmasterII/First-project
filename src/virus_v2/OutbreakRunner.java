@@ -28,8 +28,8 @@ public class OutbreakRunner {
         outbreak2019.addVirus(avirus);
 
 
-        System.out.println(outbreak2019.getInfo());
-        System.out.println(outbreak2019.getAddInfo());
+       // System.out.println(outbreak2019.getInfo());
+       // System.out.println(outbreak2019.getAddInfo());
 
         Outbreak outbreak2020 = new Outbreak();
         outbreak2020.setName("Outbreak-2020");
@@ -45,7 +45,7 @@ public class OutbreakRunner {
         outbreak2020.addVirus(flue);
         outbreak2020.addVirus(adenovirus);
 
-        System.out.println(outbreak2020.getAddInfo());
+       // System.out.println(outbreak2020.getAddInfo());
 
         Country krakozhia = new Country();
         krakozhia.setName("Krakozhia");
@@ -53,7 +53,9 @@ public class OutbreakRunner {
         krakozhia.addOutbreak(outbreak2019);
         krakozhia.addOutbreak(outbreak2020);
 
-        System.out.println(krakozhia.getOutbreakInfo());
+        //System.out.println(krakozhia.getOutbreakInfo());
+        System.out.println(krakozhia.getOutbreakInfo2());
+
 
     }
 }
