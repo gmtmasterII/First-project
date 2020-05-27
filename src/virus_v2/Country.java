@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Country {
     String name;
     ArrayList<Outbreak> listOfOutbreaks = new ArrayList();
-    ArrayList<Virus> listOfViruses2 = new ArrayList();
+
 
 
     void setName(String n) {
@@ -33,7 +33,6 @@ public class Country {
         return "Country name " + name + "\n" +
                 listOfOutbreaks.size() + " outbreaks has been detected." + "\n" +
                 "Name of outbreak: " + outbreaks;
-
     }
 
     String getOutbreakInfo2() {
@@ -41,6 +40,7 @@ public class Country {
         String consolidatedVirusInfo = "";
 
         for(Outbreak outbreak: listOfOutbreaks) {
+            consolidatedVirusInfo = "";
           for(Virus virus: outbreak.listOfViruses) {
               consolidatedVirusInfo = consolidatedVirusInfo + "\n" + virus.getName();
             }
