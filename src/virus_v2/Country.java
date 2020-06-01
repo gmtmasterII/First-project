@@ -23,7 +23,7 @@ public class Country {
         listOfOutbreaks.add(o);
     }
 
-    String getOutbreakInfo() {
+    String getOutbreakInfo() {                                                                                                  //возвращает список эпидемий и вирусы внутри эпидемий
         String outbreaks = " ";
         String outbreakViruses = "";
 
@@ -35,7 +35,7 @@ public class Country {
                 "Name of outbreak: " + outbreaks;
     }
 
-    String getOutbreakInfo2() {
+    String getOutbreakInfo2() {                                                                                             //возвращает список эпидемий и вирусы внутри эпидемий (через вложенный цикл)
         String consolidatedOutbreakInfo = "";
         String consolidatedVirusInfo = "";
 
