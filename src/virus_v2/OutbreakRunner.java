@@ -40,6 +40,7 @@ public class OutbreakRunner {
         GregorianCalendar calendar2019End = new GregorianCalendar(2019, 12, 31, 23, 59);
         Date End2019 = calendar2019End.getTime();
         outbreak2019.setEndDate(End2019);
+        outbreak2019.setPeriodDifference();
 
         Virus coronavirus = new Virus();
         coronavirus.setName("Covid-19");
@@ -72,6 +73,7 @@ public class OutbreakRunner {
         GregorianCalendar calendar2020End = new GregorianCalendar(2020, 12, 31, 23, 59);
         Date end2020 = calendar2020End.getTime();
         outbreak2020.setEndDate(End2019);
+        outbreak2020.setPeriodDifference();
 
         Virus flue = new Virus();
         flue.setName("Flue");
@@ -102,8 +104,6 @@ public class OutbreakRunner {
         europia.setName("Europia");
         europia.addCountry(krakozhia);
         europia.addCountry(vadia);
-
-
 
         System.out.println(outbreak2018.getAddInfo());
 
