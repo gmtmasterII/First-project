@@ -1,17 +1,18 @@
 package virus_v2;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 
 public class Outbreak {
     String name;
-    ArrayList<Virus> listOfViruses = new ArrayList();
-    private Date startDate;
-    private Date endDate;
+    HashMap<String, Virus> mapOfViruses = new HashMap<>();
+    private LocalDate startDate;
+    private LocalDate endDate;
     long difference;
+
 
     public String getName() {
         return name;
@@ -22,33 +23,35 @@ public class Outbreak {
     }
 
     void addVirus(Virus v) {
-        listOfViruses.add(v);
+        mapOfViruses.put(v.getVirusCode(), v);
     }
+
 
     String getInfo() {
-        return "There are " + listOfViruses.size() + " viruses in the country";
+        return "There are " + mapOfViruses.size() + " viruses in the country";
     }
 
-    //gregorian calendar methods
-    void setStartDate(Date d) {
+    //Localdate
+    void setStartDate(LocalDate d) {
         startDate = d;
     }
 
-    Date getStartDate() {
+    LocalDate getStartDate() {
         return startDate;
     }
 
-    void setEndDate(Date e) {
+    void setEndDate(LocalDate e) {
         endDate = e;
     }
 
-    Date getEndDate() {
+    LocalDate getEndDate() {
         return endDate;
     }
 
 
     void setPeriodDifference() {
-        difference = (endDate.getTime()-startDate.getTime())/(1000 * 60 * 60 * 24);
+       //difference = Duration.between(startDate, endDate).toDays();
+       difference = ChronoUnit.DAYS.between(startDate, endDate);
     }
 
     long getPeriodDifference() {
@@ -60,7 +63,7 @@ public class Outbreak {
         int abilityToInfect = 0;
         long periodDifference = 0;
 
-        for (Virus aVirusFromTheList : listOfViruses) {
+        for (Virus aVirusFromTheList : mapOfViruses.values()) {
             summary = summary + "\n" + "Virus name: " + aVirusFromTheList.getName() + "; ";
             abilityToInfect = abilityToInfect + aVirusFromTheList.getAbilityInfectPerMonth();
         }

@@ -1,15 +1,20 @@
 package virus_v2;
 
-import kz.test.sanzhar.SimpleRunner;
-
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 
 public class Country {
     String name;
     ArrayList<Outbreak> listOfOutbreaks = new ArrayList();
+    String code;
 
 
+    void setCode(String c) {
+        code = c;
+    }
+
+    String getCode() {
+        return code;
+    }
 
     void setName(String n) {
         name = n;
@@ -41,7 +46,7 @@ public class Country {
 
         for(Outbreak outbreak: listOfOutbreaks) {
             consolidatedVirusInfo = "";
-          for(Virus virus: outbreak.listOfViruses) {
+          for(Virus virus: outbreak.mapOfViruses.values()) {
               consolidatedVirusInfo = consolidatedVirusInfo + "\n" + virus.getName();
             }
             consolidatedOutbreakInfo = consolidatedOutbreakInfo + "\n >>" + outbreak.getName() + "\n" + consolidatedVirusInfo;
