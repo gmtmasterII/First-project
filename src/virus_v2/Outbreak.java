@@ -1,6 +1,5 @@
 package virus_v2;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -50,7 +49,7 @@ public class Outbreak {
 
 
     void setPeriodDifference() {
-       //difference = Duration.between(startDate, endDate).toDays();
+       //difference = Duration.between(startDate, endDate);
        difference = ChronoUnit.DAYS.between(startDate, endDate);
     }
 
