@@ -1,19 +1,17 @@
 package virus_v2;
 
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.time.Month;
 
 public class OutbreakRunner {
     public static void main(String[] args) {
 
-        //Outbreak 2018
         Outbreak outbreak2018 = new Outbreak();
         outbreak2018.setName("Outbreak 2018");
 
-        LocalDate startDate2018 = LocalDate.of(2018, 02, 20);
+        LocalDate startDate2018 = LocalDate.of(2018, Month.JANUARY, 1);
         outbreak2018.setStartDate(startDate2018);
-        LocalDate endDate2018 = LocalDate.of(2018, 12, 22);
+        LocalDate endDate2018 = LocalDate.of(2018, Month.DECEMBER, 31);
         outbreak2018.setEndDate(endDate2018);
         outbreak2018.setPeriodDifference();
 
@@ -30,7 +28,6 @@ public class OutbreakRunner {
         outbreak2018.addVirus(xVirus);
         outbreak2018.addVirus(iVirus);
 
-        //Outbreak 2019 and viruses
         Outbreak outbreak2019 = new Outbreak();
         outbreak2019.setName("Outbreak-2019");
 
@@ -65,16 +62,14 @@ public class OutbreakRunner {
         outbreak2019.addVirus(svirus);
         outbreak2019.addVirus(avirus);
 
-        //Outbreak 2020 and viruses
         Outbreak outbreak2020 = new Outbreak();
         outbreak2020.setName("Outbreak-2020");
 
         LocalDate startDate2020 = LocalDate.of(2020, 2, 12);
         outbreak2020.setStartDate(startDate2020);
         LocalDate endDat2020 = LocalDate.of(2020, 12, 20);
-        outbreak2018.setEndDate(endDat2020);
+        outbreak2020.setEndDate(endDat2020);
         outbreak2020.setPeriodDifference();
-
 
         Virus flue = new Virus();
         flue.setName("Flue");
@@ -89,7 +84,6 @@ public class OutbreakRunner {
         outbreak2020.addVirus(flue);
         outbreak2020.addVirus(adenovirus);
 
-        //Added country Krakozhia
         Country krakozhia = new Country();
         krakozhia.setName("Krakozhia");
         krakozhia.setCode("KR");
@@ -97,14 +91,12 @@ public class OutbreakRunner {
         krakozhia.addOutbreak(outbreak2019);
         krakozhia.addOutbreak(outbreak2020);
 
-        //Added country Vadia
         Country vadia = new Country();
         vadia.setName("Vadia");
         vadia.setCode("VD");
 
         vadia.addOutbreak(outbreak2018);
 
-       //Added continent Europia
         Continent europia = new Continent();
         europia.setName("Europia");
         europia.addCountry(krakozhia);
@@ -112,7 +104,7 @@ public class OutbreakRunner {
 
         //System.out.println(europia.getTotalInfo());
         //System.out.println(krakozhia.getOutbreakInfo2());
-        System.out.println(outbreak2018.getPeriodDifference());
+        System.out.println(outbreak2018.getAddInfo());
 
         }
 }

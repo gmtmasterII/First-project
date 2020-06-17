@@ -68,7 +68,6 @@ public class Outbreak {
         }
         return summary + "\n" + "Total infected cases per month: " + abilityToInfect
             + "\n" +  "Outbreak length: " + getPeriodDifference();
-
     }
 
 
