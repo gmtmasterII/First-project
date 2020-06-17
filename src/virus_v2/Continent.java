@@ -1,5 +1,6 @@
 package virus_v2;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -38,18 +39,27 @@ public class Continent {
         String consolidatedCountryInfo = "";
         String consolidatedOutbreakInfo = "";
         String consolidatedVirusInfo = "";
-        for (Country country : mapOfCountries.values()) {
-            consolidatedOutbreakInfo = "";
-            for (Outbreak outbreak : country.listOfOutbreaks) {
-                for (Virus virus: outbreak.mapOfViruses.values()) {
-                    consolidatedVirusInfo = consolidatedVirusInfo + virus.getName();
-                }
-                consolidatedOutbreakInfo = consolidatedOutbreakInfo + outbreak.getName();
-            }
+        int a = 1;
+        int b = 0;
 
-            consolidatedCountryInfo = consolidatedCountryInfo + " \n" + "Country name: " + country.getName() + "\n" + "Outbreaks: " + consolidatedOutbreakInfo + "\n" + "viruses: " + consolidatedVirusInfo;
+        try {
+            for (Country country : mapOfCountries.values()) {
+                consolidatedOutbreakInfo = "";
+                for (Outbreak outbreak : country.listOfOutbreaks) {
+                    for (Virus virus : outbreak.mapOfViruses.values()) {
+                        consolidatedVirusInfo = consolidatedVirusInfo + " " + virus.getName();
+                    }
+                    consolidatedOutbreakInfo = consolidatedOutbreakInfo + outbreak.getName();
+                }
+
+                consolidatedCountryInfo = consolidatedCountryInfo + " \n" + "Country name: " + country.getName() + "\n" + "Outbreaks: " + consolidatedOutbreakInfo + "\n" + "viruses: " + consolidatedVirusInfo;
+                int name = a/b;
+            }
+        } catch (Exception e) {
+            System.out.printf(e.getMessage());
+
+
         }
         return consolidatedCountryInfo;
-
     }
 }

@@ -47,17 +47,14 @@ public class Outbreak {
         return endDate;
     }
 
-
-    void setPeriodDifference() {
-       //difference = Duration.between(startDate, endDate);
-       difference = ChronoUnit.DAYS.between(startDate, endDate);
-    }
-
     long getPeriodDifference() {
-        return difference;
-    }
+        return ChronoUnit.DAYS.between(startDate, endDate);
+        }
 
-    String getAddInfo() {                                                                                                //возвращает список вирусов в эпидемии
+    String getAddInfo() {
+        //возвращает список вирусов в эпидемии
+
+        final String format = "%-40s%s%n";
         String summary = "";
         int abilityToInfect = 0;
         long periodDifference = 0;

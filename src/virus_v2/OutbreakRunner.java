@@ -3,7 +3,8 @@ package virus_v2;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class OutbreakRunner {
+public class OutbreakRunner
+{
     public static void main(String[] args) {
 
         Outbreak outbreak2018 = new Outbreak();
@@ -13,7 +14,6 @@ public class OutbreakRunner {
         outbreak2018.setStartDate(startDate2018);
         LocalDate endDate2018 = LocalDate.of(2018, Month.DECEMBER, 31);
         outbreak2018.setEndDate(endDate2018);
-        outbreak2018.setPeriodDifference();
 
         Virus xVirus = new Virus();
         xVirus.setName("X-Virus");
@@ -31,11 +31,10 @@ public class OutbreakRunner {
         Outbreak outbreak2019 = new Outbreak();
         outbreak2019.setName("Outbreak-2019");
 
-        LocalDate startDate2019 = LocalDate.of(2019, 03, 18);
+        LocalDate startDate2019 = LocalDate.of(2019, Month.JULY, 18);
         outbreak2019.setStartDate(startDate2019);
-        LocalDate endDate2019 = LocalDate.of(2019, 12, 7);
+        LocalDate endDate2019 = LocalDate.of(2019, Month.SEPTEMBER, 7);
         outbreak2019.setEndDate(endDate2019);
-        outbreak2019.setPeriodDifference();
 
         Virus coronavirus = new Virus();
         coronavirus.setName("Covid-19");
@@ -65,11 +64,10 @@ public class OutbreakRunner {
         Outbreak outbreak2020 = new Outbreak();
         outbreak2020.setName("Outbreak-2020");
 
-        LocalDate startDate2020 = LocalDate.of(2020, 2, 12);
+        LocalDate startDate2020 = LocalDate.of(2020, Month.JANUARY, 12);
         outbreak2020.setStartDate(startDate2020);
-        LocalDate endDat2020 = LocalDate.of(2020, 12, 20);
+        LocalDate endDat2020 = LocalDate.of(2020, Month.DECEMBER, 20);
         outbreak2020.setEndDate(endDat2020);
-        outbreak2020.setPeriodDifference();
 
         Virus flue = new Virus();
         flue.setName("Flue");
@@ -102,9 +100,8 @@ public class OutbreakRunner {
         europia.addCountry(krakozhia);
         europia.addCountry(vadia);
 
-        //System.out.println(europia.getTotalInfo());
-        //System.out.println(krakozhia.getOutbreakInfo2());
-        System.out.println(outbreak2018.getAddInfo());
+        System.out.println(europia.getTotalInfo());
 
-        }
+
+    }
 }
