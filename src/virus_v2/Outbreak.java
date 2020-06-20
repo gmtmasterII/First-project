@@ -30,7 +30,6 @@ public class Outbreak {
         return "There are " + mapOfViruses.size() + " viruses in the country";
     }
 
-    //Localdate
     void setStartDate(LocalDate d) {
         startDate = d;
     }
@@ -66,6 +65,5 @@ public class Outbreak {
         return summary + "\n" + "Total infected cases per month: " + abilityToInfect
             + "\n" +  "Outbreak length: " + getPeriodDifference();
     }
-
 
 }

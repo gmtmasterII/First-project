@@ -101,7 +101,8 @@ public class OutbreakRunner
         europia.addCountry(vadia);
 
         System.out.println(europia.getTotalInfo());
-
+       // System.out.println(outbreak2018.getPeriodDifference() + " " + outbreak2019.getPeriodDifference()
+        //+ " " + outbreak2020.getPeriodDifference()
 
     }
 }

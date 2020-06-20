@@ -9,6 +9,7 @@ public class Continent {
     HashMap<String, Country> mapOfCountries = new HashMap<>();
     ArrayList<Outbreak> listOfOutbreaks = new ArrayList<>();
     HashMap<String, Virus> mapOfViruses = new HashMap<>();
+    Outbreak duration;
 
     void setName(String n) {
         name = n;
@@ -39,24 +40,23 @@ public class Continent {
         String consolidatedCountryInfo = "";
         String consolidatedOutbreakInfo = "";
         String consolidatedVirusInfo = "";
-        int a = 1;
-        int b = 0;
 
         try {
             for (Country country : mapOfCountries.values()) {
                 consolidatedOutbreakInfo = "";
                 for (Outbreak outbreak : country.listOfOutbreaks) {
                     for (Virus virus : outbreak.mapOfViruses.values()) {
-                        consolidatedVirusInfo = consolidatedVirusInfo + " " + virus.getName();
+                        consolidatedVirusInfo = consolidatedVirusInfo + ", " + virus.getName();
                     }
-                    consolidatedOutbreakInfo = consolidatedOutbreakInfo + outbreak.getName();
+                    consolidatedOutbreakInfo = consolidatedOutbreakInfo + " " + outbreak.getName() + ";" + duration.getPeriodDifference();
                 }
 
-                consolidatedCountryInfo = consolidatedCountryInfo + " \n" + "Country name: " + country.getName() + "\n" + "Outbreaks: " + consolidatedOutbreakInfo + "\n" + "viruses: " + consolidatedVirusInfo;
-                int name = a/b;
-            }
+                 consolidatedCountryInfo = consolidatedCountryInfo + " \n" + "Country name: " + country.getName() + ";" + "\n" + "Outbreaks: " + consolidatedOutbreakInfo + "\n" + "viruses: "
+                         + consolidatedVirusInfo + ";"
+              ;
+               }
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+            System.out.printf(e.toString());
 
 
         }
