@@ -28,7 +28,7 @@ public class Task {
         return duration;
     }
 
-      void setBudget(int b) {
+    void setBudget(int b) {
         budget = b;
     }
     int getBudget() {

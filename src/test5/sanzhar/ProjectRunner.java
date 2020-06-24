@@ -3,7 +3,6 @@ package test5.sanzhar;
 public class ProjectRunner {
     public static void main (String[] args) {
         Project coda = new Project();
-
         coda.setName("Coda");
         coda.setBudget(100000);
         coda.setDuration(365);
@@ -19,7 +18,6 @@ public class ProjectRunner {
         taskObj1.setBudget(25000);
         taskObj1.setDuration(5);
         taskObj1.setDescription("White background");
-
 
         Task taskObj2 = new Task();
         taskObj2.setName("change icon");
