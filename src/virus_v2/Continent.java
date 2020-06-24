@@ -23,14 +23,6 @@ public class Continent {
         mapOfCountries.put(c.getCode(), c);
     }
 
-    String getContinentInfo() {
-        String countries = "";
-        for (Country countriesList : mapOfCountries.values()) {
-            countries = countries + "\n" + countriesList.getName();
-        }
-        return "Continent " + name + " has following countries: " + "\n" + countries;
-    }
-
     String getCountry(String c) {
         Country country = mapOfCountries.get(c);
         return country.getName();
@@ -40,6 +32,8 @@ public class Continent {
         String consolidatedCountryInfo = "";
         String consolidatedOutbreakInfo = "";
         String consolidatedVirusInfo = "";
+        long period = 0;
+        String durationNotification = "";
 
         try {
             for (Country country : mapOfCountries.values()) {
@@ -48,17 +42,22 @@ public class Continent {
                     for (Virus virus : outbreak.mapOfViruses.values()) {
                         consolidatedVirusInfo = consolidatedVirusInfo + ", " + virus.getName();
                     }
-                    consolidatedOutbreakInfo = consolidatedOutbreakInfo + " " + outbreak.getName() + ";" + duration.getPeriodDifference();
-                }
+                    period = outbreak.getPeriodDifference();
+                    if (period > 100)
+                    {
+                        durationNotification = "; Info: опасно";
 
-                 consolidatedCountryInfo = consolidatedCountryInfo + " \n" + "Country name: " + country.getName() + ";" + "\n" + "Outbreaks: " + consolidatedOutbreakInfo + "\n" + "viruses: "
-                         + consolidatedVirusInfo + ";"
-              ;
-               }
-        } catch (Exception e) {
+                    }
+
+
+                    consolidatedOutbreakInfo = consolidatedOutbreakInfo + " " + outbreak.getName() + ";" + "\n" + "Duration of the outbreak: " + outbreak.getPeriodDifference()  + durationNotification;
+                    }
+                consolidatedCountryInfo = consolidatedCountryInfo + " \n" + "Country name: " + country.getName() + ";" + "\n" + "Outbreaks: " + consolidatedOutbreakInfo + "\n" + "viruses: "
+                        + consolidatedVirusInfo + ";";
+            }
+        }
+            catch (Exception e) {
             System.out.printf(e.toString());
-
-
         }
         return consolidatedCountryInfo;
     }

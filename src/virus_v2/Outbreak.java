@@ -47,11 +47,12 @@ public class Outbreak {
     }
 
     long getPeriodDifference() {
+
         return ChronoUnit.DAYS.between(startDate, endDate);
-        }
+    }
+
 
     String getAddInfo() {
-        //возвращает список вирусов в эпидемии
 
         final String format = "%-40s%s%n";
         String summary = "";
